@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dongle">
+	<style>
+		body{
+			background-color: #424447;
+			background-image: url(https://media.discordapp.net/attachments/913838785354154044/1113290808506982400/image.png);
+			backdrop-filter: blur(5px);
+		}
+		
+		p{
+			color: #ffffff;
+			font-size: 1vw;
+			font-family: "Dongle", sans-serif;
+		}
+		text{
+			color: #ffffff
+		}
+		h1{
+			color: #ffffff;
+			font-size: 10vw;
+			font-family: "Lilita One", sans-serif;
+		}
+		h3{
+			color: #c1d0d6;
+			text-shadow: 1px 1px black;
+			font-size: 4vw;
+			font-family: "Lilita One", sans-serif;
+		}
+		.main {
+			background-color: #f5c140;
+			background-size: 100%;
+			width: 100%;
+			text-shadow: 1vw 1vw #a68505;
+			text-align: center;
+		}
+		.priceinfo {
+			background-color: #36383b;
+			background-size: 100%;
+			text-shadow: 1px 1px black;
+			width: 100%;
+			text-shadow: 1px 1px #00000;
+			text-align: center;
+		}
+		.parent {
+			margin: auto;
+			padding: 2rem 2rem;
+		}
+		.imagesbox {
+			display: inline-block;
+			width: 25%;
+			background-image: url("https://media.discordapp.net/attachments/913838785354154044/1113283894842769438/cat.jpg");
+			text-align: center;
+			background-repeat: no-repeat;
+			background-size: auto;
+			margin-left: 1vw;
+			height: 40vh;
+			border: 10px solid black;
+		}
+		.blurredbox {
+			display: inline-block;
+			width: 70%;
+			background-color: #36383b;
+			text-align: center;
+			margin-left: 1vw;
+			height: 80vh;
+			border: 10px solid black;
+		}
+		img {
+			border: 5px solid white;
+		}
+	</style>
+	<title>Hippo Hunt #2</title>
+	
+</head>
+
+<body>
+	<div class="main", id="main">
+		<h1>HIPPO HUNT #2</h1>
+	</div>
+	
+	
+	
+	<div class="parent">
+	
+		
+		<div class="imagesbox">
+			<h3>live brae reaction</h3>
+		</div>
+		
+		<div class="blurredbox">
+			<h3 id="explain">Hint reveals in...</h3>
+			<h1 id="time">00:00:00</h1>
+		</div>
+		
+		
+	</div>
+	
+	<div class="priceinfo">
+		<p> <strong>bigboysbox.minehut.gg</strong></p>
+		<p>(Renaming soon to hippobox)</p>
+	</div>
+	
+	<script>
+		var when = 1685566800;
+		
+		function update() {
+			let datenow = Math.floor(Date.now()/1000);
+			let timeuntil = when - datenow
+			if (timeuntil > 0) {
+				var date = new Date(0);
+				date.setSeconds(timeuntil);
+				document.getElementById("time").innerHTML = date.toISOString().substring(11, 19);
+			} else {
+				document.getElementById("time").innerHTML = "It's time!";
+				document.getElementById("explain").innerHTML = "Ping @Lynxdeer!";
+			}
+		}
+		
+		update();
+		
+		setInterval(function() {
+			update();
+		}, 1000);
+	</script>
+	
+</body>
+</html>
